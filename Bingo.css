@@ -20,3 +20,31 @@ h1 {color: #24FFF2;
     border-radius: 2000px;
     background: url("logo1.png"), lightgray 50% / cover no-repeat; 
 }
+
+
+.buttonInicio {
+    color: #FFF;
+    text-align: center;
+    font-family: Gorditas;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: #25CCC2;
+    position: absolute;
+    right: 66px;
+    top: 261px;
+}
+
+.textMenu {
+    color: #FFF;
+    text-align: center;
+    font-family: "GFS Neohellenic";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    right: 89px;
+    top: 142px;
+}
