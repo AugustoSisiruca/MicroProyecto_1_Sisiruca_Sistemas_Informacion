@@ -7,7 +7,7 @@ function crearCartonBingo(tamanio) {
     for (let i = 0; i < tamanio; i++) {
         matrizCarton[i] = [];
     }
-    //Estos for llena la matriz con numeros aleratorios del 1 al 50
+    //Estos for llenan la matriz con numeros aleratorios del 1 al 50
     for (let i = 0; i < tamanio; i++) {
         for (let j = 0; j < tamanio; j++) {
             do {
