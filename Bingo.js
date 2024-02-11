@@ -20,6 +20,20 @@ function obtenerTamanoCarton() {
     return localStorage.getItem('tamanoCarton');
 }
 
+
+// Función para obtener los numeros que se desean colorear en el cartón desde el almacenamiento local
+function obtenerNumerosMarcados() {
+    let numerosMarcados = localStorage.getItem('numerosMarcados');
+    return numerosMarcados ? JSON.parse(numerosMarcados) : [];
+}
+
+/// Función para guardar los numeros del bingo en el almacenamiento local
+function marcarNumero(numero) {
+    let numerosMarcados = obtenerNumerosMarcados();
+    numerosMarcados.push(numero);
+    localStorage.setItem('numerosMarcados', JSON.stringify(numerosMarcados));
+}
+
 function guardarDatos() {
     //Obtener los inputs que piden
     let jugador1 = document.getElementById("jugador1").value;
@@ -53,7 +67,8 @@ function guardarDatos() {
 
 
 
-function crearCartonJugador(idContenedor) {
+// Función para crear y mostrar el cartón de bingo de un jugador
+function crearCartonJugador(idContenedor, numeroAleatorio) {
     let cartonJugadorBingo = document.getElementById(idContenedor);
     let tamanoCarton = obtenerTamanoCarton();
     let carton = crearCartonBingo(tamanoCarton);
@@ -62,14 +77,21 @@ function crearCartonJugador(idContenedor) {
     cartonJugadorBingo.innerHTML = "";
     
     // Mostrar el cartón de Bingo en el contenedor
-    carton.forEach(fila => {
+    carton.forEach((fila, i) => {
         let filaDiv = document.createElement('div');
         filaDiv.classList.add('filaBingo');
 
-        fila.forEach(numero => {
+        fila.forEach((numero, j) => {
             let numeroDiv = document.createElement('div');
             numeroDiv.classList.add('numeroBingo');
             numeroDiv.textContent = numero;
+
+            // Si el número coincide con el número aleatorio generado en el turno
+            // o si el número ya está marcado en el cartón, resaltar la casilla en rojo
+            if (numero === numeroAleatorio || esNumeroMarcado(numero, carton, i, j)) {
+                numeroDiv.classList.add('marcado');
+            }
+
             filaDiv.appendChild(numeroDiv);
         });
 
@@ -77,6 +99,16 @@ function crearCartonJugador(idContenedor) {
     });
 }
 
+// Función para verificar si un número en el cartón ya ha sido marcado
+function esNumeroMarcado(numero, carton, filaIndex, columnaIndex) {
+    for (let i = 0; i < carton.length; i++) {
+        for (let j = 0; j < carton[i].length; j++) {
+            if (i === filaIndex && j === columnaIndex) continue; // Saltar la casilla actual
+            if (carton[i][j] === numero) return true; // Si el número está en otra casilla, está marcado
+        }
+    }
+    return false;
+}
 
 
 function crearCartonBingo(tamanio) {
@@ -100,4 +132,52 @@ function crearCartonBingo(tamanio) {
         }
     }
     return matrizCarton;
+}
+
+function verificarLinea(carton) {
+    // Verificar líneas horizontales
+    for (let i = 0; i < carton.length; i++) {
+        let lineaCompleta = true;
+        for (let j = 0; j < carton[i].length; j++) {
+            if (!esNumeroMarcado(carton[i][j])) {
+                lineaCompleta = false;
+                break;
+            }
+        }
+        if (lineaCompleta) return true;
+    }
+
+    // Verificar líneas verticales
+    for (let i = 0; i < carton[0].length; i++) {
+        let lineaCompleta = true;
+        for (let j = 0; j < carton.length; j++) {
+            if (!esNumeroMarcado(carton[j][i])) {
+                lineaCompleta = false;
+                break;
+            }
+        }
+        if (lineaCompleta) return true;
+    }
+
+    // Verificar línea diagonal principal
+    let diagonalPrincipalCompleta = true;
+    for (let i = 0; i < carton.length; i++) {
+        if (!esNumeroMarcado(carton[i][i])) {
+            diagonalPrincipalCompleta = false;
+            break;
+        }
+    }
+    if (diagonalPrincipalCompleta) return true;
+
+    // Verificar línea diagonal secundaria
+    let diagonalSecundariaCompleta = true;
+    for (let i = 0; i < carton.length; i++) {
+        if (!esNumeroMarcado(carton[i][carton.length - 1 - i])) {
+            diagonalSecundariaCompleta = false;
+            break;
+        }
+    }
+    if (diagonalSecundariaCompleta) return true;
+
+    return false;
 }

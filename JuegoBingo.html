@@ -11,7 +11,11 @@
     <h2>Revisen su carton de bingo correspondiente
         Buena suerte!
     </h2>
+    <button onclick="reiniciarJuego()">Reiniciar Juego</button>
     <button>Activar Bingo</button>
+    <div id="contadorTurno">Turno: 0</div>
+    <button id="siguienteTurno">Siguiente turno</button>
+    <div id="numeroBingo"></div>
     <section>
         <p>jugador 1</p>
         <div id="cartonBingo1" class="cartonBingo"></div>
@@ -26,15 +30,19 @@
         <div id="cartonBingo4" class="cartonBingo"></div>
 
     </section>
+
+
+    <button onclick="salirJuego()">Salir del Bingo</button>
+
 </body>
 <script src="Bingo.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        crearCartonJugador("cartonBingo1");
-        crearCartonJugador("cartonBingo2");
-        crearCartonJugador("cartonBingo3");
-        crearCartonJugador("cartonBingo4");
-    });
+    crearCartonJugador("cartonBingo1");
+    crearCartonJugador("cartonBingo2");
+    crearCartonJugador("cartonBingo3");
+    crearCartonJugador("cartonBingo4");
+
 </script>
+<script src="Contador.js"></script>
 
 </html>
