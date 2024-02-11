@@ -4,21 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="Bingo.css">
 </head>
 <body>
-    <h1>El Bingo Comenzará Pronto</h1>
+    <h1><a href="MenuPrincipal.html">BingoBongo</a></h1>
     <h2>Revisen su carton de bingo correspondiente
         Buena suerte!
     </h2>
+    <button>Activar Bingo</button>
     <section>
-        <div>jugador 1</div>
-        
+        <p>jugador 1</p>
+        <div id="cartonBingo1" class="cartonBingo"></div>
+
         <div>jugador 2</div>
+        <div id="cartonBingo2" class="cartonBingo"></div>
         <br>
         <div>jugador 3</div>
+        <div id="cartonBingo3" class="cartonBingo"></div>
+
         <div>jugador 4</div>
+        <div id="cartonBingo4" class="cartonBingo"></div>
 
     </section>
 </body>
+<script src="Bingo.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        crearCartonJugador("cartonBingo1");
+        crearCartonJugador("cartonBingo2");
+        crearCartonJugador("cartonBingo3");
+        crearCartonJugador("cartonBingo4");
+    });
+</script>
 
 </html>

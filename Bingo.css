@@ -1,6 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    background-color: #1c39c7;
 }
 
 h1 {color: #24FFF2;
@@ -48,3 +49,45 @@ h1 {color: #24FFF2;
     right: 89px;
     top: 142px;
 }
+
+.cartonBingo {
+    display: flex;
+    flex-direction: column;
+    background: #4D1CC7;
+    align-items: center;
+    padding: 20px;
+}
+
+.filaBingo {
+    display: flex;
+} 
+
+.numeroBingo {
+    display: flex;
+    width: 115px;
+    height: 115px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 2px;
+    background: #C5EEFF;
+}
+
+.columnaBingo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+
+
+
+.vectorLetra {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+
+}
+
