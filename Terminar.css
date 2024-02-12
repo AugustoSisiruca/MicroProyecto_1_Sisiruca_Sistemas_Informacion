@@ -1,0 +1,39 @@
+body {
+    padding: 27px 117px 49px 100px;
+    align-items: center;
+    background-color: #3B2CE7;
+}
+
+button {
+    background-color: #25CCC2;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: Gorditas;
+    font-size: 25px;
+    padding: 25px;
+    width: 200px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: #24FFF2;
+    font-family: "Goblin One";
+    text-justify: center;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 25px;
+    color: #FFF;
+    text-justify: center;
+}
+
+img {
+    padding: 10px;
+    
+}
+  

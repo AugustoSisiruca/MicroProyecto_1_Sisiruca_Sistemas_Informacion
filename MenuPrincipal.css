@@ -1,3 +1,47 @@
+body {
+  display: inline-flex;
+  padding: 27px 117px 49px 100px;
+  align-items: center;
+  background-color: #3B2CE7;
+}
+
+h1 {
+  color: #24FFF2;
+  text-align: center;
+  font-family: "Goblin One";
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+p {
+  color: #FFF;
+  text-align: center;
+  font-family: "GFS Neohellenic";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+button {
+  right: 66px;
+  background-color: #25CCC2;
+  margin: 20px;
+  border-radius: 30px;
+  width: 1074px;
+  height: 130px;
+  color: #FFF;
+  text-align: center;
+  font-family: Gorditas;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .logo {
   width: 390px;
   height: 385px;

@@ -7,32 +7,39 @@
     <link rel="stylesheet" href="Bingo.css">
 </head>
 <body>
-    <h1><a href="MenuPrincipal.html">BingoBongo</a></h1>
-    <h2>Revisen su carton de bingo correspondiente
-        Buena suerte!
+    <h1>BINGOBONGO</h1>
+    <h2>Revisen su carton de bingo correspondiente. Buena suerte!
     </h2>
-    <button onclick="reiniciarJuego()">Reiniciar Juego</button>
-    <button>Activar Bingo</button>
-    <div id="contadorTurno">Turno: 0</div>
-    <button id="siguienteTurno">Siguiente turno</button>
-    <div id="numeroBingo"></div>
-    <section>
-        <p>jugador 1</p>
-        <div id="cartonBingo1" class="cartonBingo"></div>
+    <div id="contadorTurno" class="textoJuego">Turno: 0</div>
+    <button id="siguienteTurno" class="textoJuego">Siguiente turno</button>
+    <div id="numeroBingo" class="textoJuego"></div>
+    <br/>
+    <button class="arrow" id="leftArrow">&larr;</button>
+    <button class="arrow" id="rightArrow">&rarr;</button>
+        <section class="section" id="section1">
+            <p>JUGADOR 1</p>
+            <div id="cartonBingo1" class="cartonBingo"></div>
+        </section>
 
-        <div>jugador 2</div>
-        <div id="cartonBingo2" class="cartonBingo"></div>
-        <br>
-        <div>jugador 3</div>
-        <div id="cartonBingo3" class="cartonBingo"></div>
+        <section class="section" id="section2">
+            <p>JUGADOR 2</p>
+            <div id="cartonBingo2" class="cartonBingo"></div>
+        </section>
 
-        <div>jugador 4</div>
-        <div id="cartonBingo4" class="cartonBingo"></div>
+        <section class="section" id="section3">
+            <p>JUGADOR 3</p>
+            <div id="cartonBingo3" class="cartonBingo"></div>
+        </section>
 
-    </section>
+        <section class="section" id="section4">
+            <p>JUGADOR 4</p>
+            <div id="cartonBingo4" class="cartonBingo"></div>
+        </section>
+        <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+        <button onclick="salirJuego()">Salir del Bingo</button>
 
 
-    <button onclick="salirJuego()">Salir del Bingo</button>
+
 
 </body>
 <script src="Bingo.js"></script>
